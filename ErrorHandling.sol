@@ -11,7 +11,7 @@ contract ErrorHandling {
     }
 
     function divide(uint _numerator, uint _denomenator) public pure returns (uint){
-        if(_numerator<_denomenator){
+        if(_numerator>_denomenator){
            
             revert("please provide numerator greater than denomenator");
             
