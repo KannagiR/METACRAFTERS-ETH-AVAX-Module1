@@ -15,27 +15,32 @@ This contract is using the MIT License.
 
 The `ErrorHandling` contract provides the following functions:
 
-### `deposit(uint amount)`
+### weather
+The solar function is used to generate solar power. It uses the require() statement to check if it is sunny. If the condition fails, the function execution is reverted. Otherwise, it adds 3 to the finalCal variable. The assert() statement is used to verify that finalCal is not equal to 6.
 
-- This function demonstrates the usage of the `require` function.
-- It takes a `amount` parameter and checks if it is greater than zero using the `require` statement.
-- If the condition fails, it triggers an "Internal error" and aborts the execution.
+### Weather Changer
+The weatherChanger function allows users to change the weather condition. It toggles the sunny variable between true and false.
 
-### `reverttest(uint _deposit , uint _withdraw)`
+### Bringing Umbrella
+The BringUmbrella function determines if an umbrella needs to be brought. If it is not sunny, the umbrella variable is set to true. Otherwise, the function execution is reverted with an error message using the revert() statement.
 
-- This function demonstrates the usage of the `revert` function.
-- It takes `_deposit` and `_withdraw` parameters and performs division.
-- If the `_deposit` is greater than `_withdraw`, it reverts the transaction with a custom error message stating that the deposit should be greater than the withdraw.
-- If the condition is met, it returns the result of the division.
+### Get Final Call
+The getCal function is a view function that returns the value of the finalCal variable.
 
-### `withdraw(uint amount)`
+### Deployment and Usage
+To deploy the contract, follow these steps:
 
-- This function demonstrates the usage of the `assert` function.
-- It takes a `balance` parameter and checks if the value is greater than or equal to `amount`.
-- If `balance` is greater than or equal to amount it will use the `assert` statement.
+Compile the smart contract code using a Solidity compiler (e.g., Remix, Truffle).
+Deploy the contract to an Ethereum network of your choice (e.g., local development network, public testnet, or mainnet) using a compatible Ethereum client or development framework (e.g., Remix, Truffle, Hardhat).
+Once deployed, you can interact with the contract using the provided functions:
 
-## Usage
+Use the solar function to generate solar power, which adds 3 to finalCal. Make sure it is sunny, or the transaction will be reverted.
+Use the weatherChanger function to toggle the weather condition between sunny and not sunny.
+Use the BringUmbrella function to determine if an umbrella needs to be brought based on the weather. If it is not sunny, the umbrella variable will be set to true. Otherwise, the transaction will be reverted.
+Use the getCal function to retrieve the value of the finalCal variable.
 
-1. Make sure you have Solidity ^0.8.17 installed.
-2. Compile and deploy the `ErrorHandling` contract to a supported Ethereum network.
-3. Interact with the deployed contract by calling the available functions and providing the required parameters.
+### Development Environment
+The contract is developed using Solidity version 0.8.18. It is recommended to use a compatible Solidity compiler or development framework (e.g., Remix, Truffle) for compilation and deployment.
+
+
+
