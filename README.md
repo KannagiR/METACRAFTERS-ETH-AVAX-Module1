@@ -16,7 +16,7 @@ This contract is using the MIT License.
 The `ErrorHandling` contract provides the following functions:
 
 ### weather
-The solar function is used to generate solar power. It uses the require() statement to check if it is sunny. If the condition fails, the function execution is reverted. Otherwise, it adds 3 to the finalCal variable. The assert() statement is used to verify that finalCal is not equal to 6.
+The weather is used to see weather. It uses the require() statement to check if it is sunny. If the condition fails, the function execution is reverted. Otherwise, it adds 3 to the finalCall variable. The assert() statement is used to verify that finalCall is not equal to 6.
 
 ### Weather Changer
 The weatherChanger function allows users to change the weather condition. It toggles the sunny variable between true and false.
@@ -34,7 +34,7 @@ Compile the smart contract code using a Solidity compiler (e.g., Remix, Truffle)
 Deploy the contract to an Ethereum network of your choice (e.g., local development network, public testnet, or mainnet) using a compatible Ethereum client or development framework (e.g., Remix, Truffle, Hardhat).
 Once deployed, you can interact with the contract using the provided functions:
 
-Use the solar function to generate solar power, which adds 3 to finalCal. Make sure it is sunny, or the transaction will be reverted.
+Use the weather to generate weather, which adds 3 to finalCall. Make sure it is sunny, or the transaction will be reverted.
 Use the weatherChanger function to toggle the weather condition between sunny and not sunny.
 Use the BringUmbrella function to determine if an umbrella needs to be brought based on the weather. If it is not sunny, the umbrella variable will be set to true. Otherwise, the transaction will be reverted.
 Use the getCal function to retrieve the value of the finalCal variable.
