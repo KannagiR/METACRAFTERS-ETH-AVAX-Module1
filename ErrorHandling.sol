@@ -1,24 +1,29 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+ // SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
 
-contract ErrorHandling {
+contract Errorhandling {
+    bool public sunny = true;
+    bool public umbrella = false;
+    uint finalCall = 0;
 
-  uint public balance;
-
-  function deposit(uint amount) public {
-    require(amount > 0, "Amount must be greater than 0");
-    balance += amount;
-  }
-
-  function withdraw(uint amount) public {
-    assert(balance >= amount);
-      balance -= amount;
-  }
-
-  function reverttest(uint _deposit , uint _withdraw) public pure {
-    if(_deposit > _withdraw) {
-      revert("true");
+    
+    function weather () public {
+        require(sunny,"IT IS NOT SUNNY TODAY!!");
+        finalCall += 3;
+    
+        assert (finalCall != 0);
     }
-  }
-
+    function weatherChanger() public{
+        sunny = !sunny;
+    }
+    function getCal() public view returns(uint) {
+        return finalCall;
+    }
+    function BringUmbrella () public {
+        if(!sunny){
+            umbrella = true;
+        }else{
+            revert("No Umbrella needed");
+        }
+    }
 }
