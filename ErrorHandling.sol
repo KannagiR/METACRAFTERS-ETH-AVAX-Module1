@@ -20,7 +20,7 @@ contract ErrorHandling {
        
 
     }
-    function mult(uint a) public view returns (uint){
+    function multi(uint a) public view returns (uint){
         require(a>0,"Value of a is zero , we don't want the result to be zero");
         return a*b;
 
